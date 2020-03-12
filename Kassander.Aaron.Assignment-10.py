@@ -60,12 +60,13 @@ labels = 'AIG', 'F', 'FB', 'GOOG', 'IBM', 'M', 'MSFT', 'RDS-A'
 sizes = [AIG_Data, F_Data, FB_Data, GOOG_Data, IBM_Data, M_Data, MSFT_Data, RDS_Data]
 #Adjusting placement of Google slice to stand out more in pie chart
 explode = [0, 0, 0, 0.05, 0, 0, 0, 0]
-#Creating the pie chart
+#Creating the pie chart without labels as labels will be included in the legend
 plt.pie(sizes, autopct='%1.1f%%', explode = explode)
 #Adding title to the pie chart
 plt.title("Stock Value Distribution for August 4, 2017")
-#Adding axis to make sure pie chart is complete circle
+#Adding legend to be positioned in lower left corner of pie chart area
 plt.legend(labels, loc=3)
+#Adding axis to make sure pie chart is complete circle
 plt.axis('equal')
 #Showing the pie chart
 plt.show()
