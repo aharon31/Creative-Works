@@ -51,6 +51,8 @@ for stock in stockname:
 		elif stock['Symbol'] in ['RDS-A']:
 			#Assigning stock close data to variable
 			RDS_Data =(float (stock['Close']))
+
+#The slices of the pie will be ordered and plotted counter-clockwise
 #Setting labels for each section of the pie chart
 labels = 'AIG', 'F', 'FB', 'GOOG', 'IBM', 'M', 'MSFT', 'RDS-A'
 #Entering data from variables to accompanying slice of pie
@@ -59,8 +61,11 @@ sizes = [AIG_Data, F_Data, FB_Data, GOOG_Data, IBM_Data, M_Data, MSFT_Data, RDS_
 #Adjusting placement of Google slice to stand out more in pie chart
 explode = [0, 0, 0, 0.05, 0, 0, 0, 0]
 #Creating the pie chart
-plt.pie(sizes, labels=labels, autopct='%1.1f%%', explode = explode)
+plt.pie(sizes, autopct='%1.1f%%', explode = explode)
 #Adding title to the pie chart
 plt.title("Stock Value Distribution for August 4, 2017")
+#Adding axis to make sure pie chart is complete circle
+plt.legend(labels, loc=3)
+plt.axis('equal')
 #Showing the pie chart
 plt.show()
